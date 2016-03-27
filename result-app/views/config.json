@@ -1,7 +1,7 @@
 {
-  "name":"Gordon",
-  "twitter":"@docker",
-  "location":"San Francisco, CA, USA",
-  "repo":["example/votingapp_voting-app","example/votingapp_result-app"],
+  "name":"Wai-Yin",
+  "twitter":"@Endless_forms",
+  "location":"CA, USA",
+  "repo":["wykhuh/votingapp_voting-app","wykhuh/votingapp_result-app"],
   "vote":"Cat"
 }
