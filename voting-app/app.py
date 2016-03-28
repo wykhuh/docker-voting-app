@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import make_response
+from flask import redirect, url_for
 from utils import connect_to_redis
 import os
 import socket
@@ -13,6 +14,8 @@ import xml.etree.ElementTree as ET
 from random import randint
 
 requestURL = "http://thecatapi.com/api/images/get?format=xml&results_per_page=50&size=med"
+redis = connect_to_redis("redis")
+app = Flask(__name__)
 
 def get_images(url):
     root = ET.parse(urllib2.urlopen(requestURL)).getroot()
@@ -78,7 +81,6 @@ def stored_images():
         {'url': 'http://24.media.tumblr.com/tumblr_lp251wwjgy1qjgt9to1_500.jpg', 'id': 'cic'}
     ]
 
-
 def random_images(images):
     count = len(images)
     print count
@@ -89,16 +91,20 @@ def random_images(images):
         rand2 = randint(0, count)
     return [images[rand], images[rand2]]
 
-
-hostname = socket.gethostname()
-
-redis = connect_to_redis("redis")
-app = Flask(__name__)
-
-
 @app.route("/", methods=['POST','GET'])
-def hello():
+def home():
     images = random_images(stored_images())
+
+    resp = make_response(render_template(
+        'index.html',
+        option_a=images[0],
+        option_b=images[1]
+    ))
+    resp.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0';
+    return resp
+
+@app.route("/voted", methods=['POST'])
+def voted():
     voter_id = hex(random.getrandbits(64))[2:-1]
     vote = None
 
@@ -107,17 +113,9 @@ def hello():
         data = json.dumps({'voter_id': voter_id, 'vote': vote})
         redis.rpush('votes', data)
 
-    resp = make_response(render_template(
-        'index.html',
-        option_a=images[0],
-        option_b=images[1],
-        hostname=hostname,
-        vote=vote,
-    ))
-    resp.headers['Cache-Control'] = 'no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0';
-    resp.set_cookie('voter_id', voter_id)
-    return resp
+    return redirect(url_for('home'))
 
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
+    # app.run( debug=True)
