@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   </head>
   <body>
-    {{vote}} ======
-
     <div id="content-container">
       <div id="content-container-center">
         <h1>Favorite Kitty!</h1>
@@ -24,32 +22,10 @@
             <img src="{{option_b.url}}">
           </button>
         </form>
-        <div id="tip">
-          (Tip: you can change your vote)
-        </div>
         <div id="hostname">
           Vote processed by {{hostname}}
         </div>
       </div>
     </div>
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-
-    {% if vote %}
-    <script>
-      var vote = "{{vote}}";
-
-      if(vote == "{{option_a.id}}"){
-        $(".a").prop('disabled', true);
-        $(".a").html('{{option_a}} <i class="fa fa-check-circle"></i>');
-        $(".b").css('opacity','0.5');
-      }
-      if(vote == "{{option_b.id}}"){
-        $(".b").prop('disabled', true);
-        $(".b").html('{{option_b}} <i class="fa fa-check-circle"></i>');
-        $(".a").css('opacity','0.5');
-      }
-    </script>
-    {% endif %}
   </body>
 </html>
