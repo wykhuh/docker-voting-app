@@ -95,7 +95,7 @@ def random_images(images):
 
 hostname = socket.gethostname()
 
-# redis = connect_to_redis("redis")
+redis = connect_to_redis("redis")
 app = Flask(__name__)
 
 
@@ -108,8 +108,7 @@ def hello():
     if request.method == 'POST':
         vote = request.form['vote']
         data = json.dumps({'voter_id': voter_id, 'vote': vote})
-        print data
-        # redis.rpush('votes', data)
+        redis.rpush('votes', data)
 
     resp = make_response(render_template(
         'index.html',
