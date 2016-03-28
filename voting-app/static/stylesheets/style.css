@@ -12,18 +12,12 @@ html,body{
 }
 
 button{
+  background-color: #000;
+
 }
 
 button[type="submit"] {
   -webkit-appearance:none; -webkit-border-radius:0;
-}
-
-button.a{
-  background-color: #1aaaf8;
-}
-
-button.b{
-  background-color: #00cbca;
 }
 
 #tip{
@@ -95,16 +89,6 @@ button.b{
   background-color: #00a2a1;
 }
 
-#background-stats{
-  z-index:1;
-  height:100%;
-  width:100%;
-  position:absolute;
-}
-#background-stats div{
-  transition: width 400ms ease-in-out;
-  display:inline-block;
-  margin-bottom:-4px;
-  width:50%;
-  height:100%;
+h1 {
+  line-height: .75em;
 }

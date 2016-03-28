@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Favorite Kitty!</title>
+    <title>Vote: Who's the Cutest?</title>
     <base href="/index.html">
     <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
     <meta name="keywords" content="docker-compose, docker, stack">
@@ -13,18 +13,16 @@
   <body>
     <div id="content-container">
       <div id="content-container-center">
-        <h1>Favorite Kitty!</h1>
+        <h1>Vote: Who's the Cutest?</h1>
         <form id="choice" name='form' method="POST" action="/">
           <button id="a" type="submit" name="vote" class="a" value="{{option_a.url}}">
             <img src="{{option_a.url}}">
           </button>
+          <h1>vs.</h1>
           <button id="b" type="submit" name="vote" class="b" value="{{option_b.url}}">
             <img src="{{option_b.url}}">
           </button>
         </form>
-        <div id="hostname">
-          Vote processed by {{hostname}}
-        </div>
       </div>
     </div>
   </body>

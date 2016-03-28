@@ -28,27 +28,20 @@ html,body{
 #choice{
   line-height:1.3em;
   vertical-align:middle;
-  font-size:30px;
+  font-size:25px;
   font-weight: 600;
 }
 
 #choice img {
   max-width: 400px;
   max-height: 350px;
+  margin: 10px;
 }
 
 #choice .choice {
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: #00cbca;
-  height: 350px;
-  width: 650px;
-}
-
-#choice .label {
-  float: left;
-}
-
-#choice .stat {
-  float: right;
+  background: #000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  width: 450px;
 }
