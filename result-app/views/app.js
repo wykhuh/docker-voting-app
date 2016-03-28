@@ -3,7 +3,7 @@ var socket = io.connect({transports:['polling']});
 
 app.controller('statsCtrl', function($scope,$http){
 
-  $scope.votes = [1,2,3];
+  $scope.votes = [];
 
   $scope.buttonPush = function() {
     $http({
@@ -19,19 +19,9 @@ app.controller('statsCtrl', function($scope,$http){
   var updateScores = function(){
     socket.on('scores', function (json) {
        data = JSON.parse(json);
-       console.log('update', data)
-       $scope.votes = [5,6,7];
-
-
-
-      //  var a = parseInt(data.a || 0);
-      //  var b = parseInt(data.b || 0);
-
-      //  animateStats(a, b);
 
        $scope.$apply(function() {
          $scope.votes = data;
-
       });
     });
   };

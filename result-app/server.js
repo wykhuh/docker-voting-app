@@ -27,9 +27,9 @@ var query = require('./views/config.json');
 async.retry(
   {times: 1000, interval: 1000},
   function(callback) {
-    pg.connect('postgres://wai-yinkwan@localhost/votes', function(err, client, done) {
-
-    // pg.connect('postgres://postgres@db/postgres', function(err, client, done) {
+    // var dbUrl = 'postgres://wai-yinkwan@localhost/votes';
+    var dbUrl = 'postgres://postgres@db/postgres';
+    pg.connect(dbUrl, function(err, client, done) {
       if (err) {
         console.error("Failed to connect to db");
       }
@@ -64,7 +64,7 @@ function postBirthday() {
 }
 
 function getVotes(client) {
-  client.query('SELECT vote, COUNT(id) AS count FROM votes GROUP BY vote ORDER BY count DESC LIMIT 3', [], function(err, result) {
+  client.query('SELECT vote, COUNT(id) AS count FROM votes GROUP BY vote ORDER BY count DESC LIMIT 5', [], function(err, result) {
     if (err) {
       console.error("Error performing query: " + err);
     } else {

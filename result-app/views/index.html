@@ -2,7 +2,7 @@
 <html ng-app="javavspython">
   <head>
     <meta charset="utf-8">
-    <title>Favorite Kitty! -- Results</title>
+    <title>Favorite Kitty! -- Top 5</title>
     <base href="/index.html">
     <meta name = "viewport" content = "width=device-width, initial-scale = 1.0">
     <meta name="keywords" content="docker-compose, docker, stack">
@@ -12,7 +12,7 @@
   <body ng-controller="statsCtrl" >
     <div id="content-container">
       <div id="content-container-center">
-        <h1>Favorite Kitty!</h1>
+        <h1>Favorite Kitty! -- Top 5</h1>
         <div id="choice">
           <div class="choice one" ng-repeat="vote in votes">
             <div class="label"><img ng-src="{{vote.vote}}"></div>

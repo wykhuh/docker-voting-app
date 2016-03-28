@@ -31,7 +31,6 @@ def stored_images():
     return [
         {'url': 'http://25.media.tumblr.com/tumblr_m72ekibnkX1r6i9kzo1_500.jpg', 'id': 'MTg0ODgxNQ'},
         {'url': 'http://24.media.tumblr.com/tumblr_m27d81MFrA1qze0hyo1_500.jpg', 'id': 'a9b'},
-        {'url': 'http://25.media.tumblr.com/tumblr_mcnvlhcHpn1r2djy3o1_500.jpg', 'id': 'MTk0ODM4MA'},
         {'url': 'http://25.media.tumblr.com/tumblr_mbfqag6mvZ1qhwmnpo1_500.jpg', 'id': 'MTYxMDU0MA'},
         {'url': 'http://24.media.tumblr.com/tumblr_mauz929mFV1qhwmnpo1_500.jpg', 'id': 'MTYyNTY0MA'},
         {'url': 'http://24.media.tumblr.com/tumblr_m9mbcwiWyU1qejbiro1_400.jpg', 'id': 'MjAzOTQ2MA'},
@@ -48,7 +47,6 @@ def stored_images():
         {'url': 'http://25.media.tumblr.com/tumblr_lt66xm2eVg1qzaxi1o1_500.jpg', 'id': '66t'},
         {'url': 'http://25.media.tumblr.com/tumblr_m3gerxIivE1qhdif9o1_500.gif', 'id': '8s8'},
         {'url': 'http://24.media.tumblr.com/tumblr_m48xbtbkTR1rtuomto1_500.jpg', 'id': '46n'},
-        {'url': 'http://24.media.tumblr.com/tumblr_m4rww8DacD1r6jd7fo1_500.jpg', 'id': 'e81'},
         {'url': 'http://25.media.tumblr.com/tumblr_lkr7m9vnuL1qdvbl3o1_500.jpg', 'id': '7j8'},
         {'url': 'http://24.media.tumblr.com/tumblr_lhugnqpXVM1qfyzelo1_500.jpg', 'id': '24k'},
         {'url': 'http://28.media.tumblr.com/tumblr_m2pppwjMnW1qhwmnpo1_500.jpg', 'id': '305'},
@@ -70,7 +68,6 @@ def stored_images():
         {'url': 'http://24.media.tumblr.com/tumblr_lmaq9ehjDv1qcj1yvo1_400.jpg', 'id': '544'},
         {'url': 'http://28.media.tumblr.com/tumblr_m1tn9cMHwf1rr6z2oo1_250.gif', 'id': '1u1'},
         {'url': 'http://25.media.tumblr.com/tumblr_m2zr0xKHB61qbe5pxo1_500.jpg', 'id': '99g'},
-        {'url': 'http://24.media.tumblr.com/tumblr_l606e7Duzu1qa0uujo1_500.jpg', 'id': 'bk8'},
         {'url': 'http://25.media.tumblr.com/tumblr_lns5u2l9TC1qcn249o1_500.gif', 'id': '4bd'},
         {'url': 'http://24.media.tumblr.com/tumblr_ln5sa8Z0So1qbt33io1_500.jpg', 'id': '5rj'},
         {'url': 'http://24.media.tumblr.com/tumblr_m1u6hlV1sd1qze0hyo1_500.jpg', 'id': 'aaq'},
@@ -123,4 +120,4 @@ def hello():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", debug=True)
+    app.run(host='0.0.0.0', port=80)
